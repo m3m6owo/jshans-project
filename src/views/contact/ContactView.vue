@@ -11,6 +11,7 @@
           Hello
           <div>👋</div>
         </div>
+        <div class="content">我是Shan，如有職務或合作需求，歡迎透過以下方式與我聯絡。：）</div>
         <div class="email">
           <div>EMAIL:</div>
           m3m6owo@gmail.com
@@ -65,8 +66,20 @@ const titleAni = () => {
         y: 70,
         duration: 1,
       },
-      '<0.95',
+      '<0.6',
     )
+    .from(
+      '.content',
+      {
+        opacity: 0,
+        filter: 'blur(6px)',
+        y: 70,
+        duration: 1,
+      },
+      '<0.35',
+    )
+
+
     .from(
       '.email',
       {

@@ -79,6 +79,12 @@ const window_width = window.innerWidth
 
 // 🔸 加入分類欄位 category
 const projectList = ref([
+{
+    name: '森景建設',
+    img: new URL('@/assets/img/project/official/sen.webp', import.meta.url).href,
+    category: 'officialWebsite',
+    link: 'https://www.senview.com.tw/',
+  },
   {
     name: '橄欖樹廣告',
     img: new URL('@/assets/img/project/official/olive_tree.webp', import.meta.url).href,
@@ -115,25 +121,13 @@ const projectList = ref([
     category: 'officialWebsite',
     link:'https://longterm.acerfoundation.org.tw/#/'
   },
-  {
-    name: '鑽很大online',
-    img: new URL('@/assets/img/project/official/diamondonline.webp', import.meta.url).href,
-    category: 'officialWebsite',
-    link:'https://www.diamondonline.com.tw/'
-  },
-  {
-    name: '鑽很大Bingo',
-    img: new URL('@/assets/img/project/official/bingo.webp', import.meta.url).href,
-    category: 'officialWebsite',
-    link:''
-  },
-  {
-    name: 'BingoBingo',
-    img: new URL('@/assets/img/project/official/33_bingo.webp', import.meta.url).href,
-    category: 'officialWebsite',
-    link:''
-  },
 
+  {
+    name: '山卓夫 代官山',
+    img: new URL('@/assets/img/project/onepage/dai.webp', import.meta.url).href,
+    category: 'onePage',
+    link:'https://ws.srl.tw/cs/2025102109291930/'
+  },
   {
     name: '舜元出雲',
     img: new URL('@/assets/img/project/onepage/1.webp', import.meta.url).href,
@@ -236,6 +230,25 @@ const projectList = ref([
     img: new URL('@/assets/img/project/onepage/yu.webp', import.meta.url).href,
     category: 'onePage',
     link:'https://ws.srl.tw/cs/2023083111350799/'
+  },
+  {
+    name: '鑽很大online',
+    img: new URL('@/assets/img/project/official/diamondonline.webp', import.meta.url).href,
+    category: 'officialWebsite',
+    link:'https://www.diamondonline.com.tw/'
+  },
+  {
+    name: '鑽很大Bingo',
+    img: new URL('@/assets/img/project/official/bingo.webp', import.meta.url).href,
+    category: 'officialWebsite',
+    link:''
+  },
+
+  {
+    name: 'BingoBingo',
+    img: new URL('@/assets/img/project/official/33_bingo.webp', import.meta.url).href,
+    category: 'officialWebsite',
+    link:''
   },
 ])
 

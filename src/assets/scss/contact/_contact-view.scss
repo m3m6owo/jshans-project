@@ -89,6 +89,16 @@
         }
       }
 
+      .content{
+        color: #252525;
+        display: flex;
+        font-size: 1.1vw;
+        margin-top: 5vw;font-family: '微軟正黑體';
+        @media all and (max-width: 1024px) {
+          font-size: 3.8vw;
+        }
+      }
+
       .email {
         display: flex;
         flex-direction: column;

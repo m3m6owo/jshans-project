@@ -47,13 +47,13 @@
             <div class="black-box">
               <div class="black-text black1">嗨，我是 Shan 👋</div>
               <div class="black-text black2">我是熱愛打造有趣的動態效果與介面的前端工程師，</div>
-              <div class="black-text black3">使用Vue和GSAP創造出有靈魂的網頁</div>
+              <div class="black-text black3">使用Angular、Vue和GSAP創造出有靈魂的網頁</div>
               <div class="black-text black4">我相信，好的網頁不只要有高效能，</div>
               <div class="black-text black5">還要能展現精彩的動態效果與互動體驗。</div>
               <div class="blue-box">
                 <div class="blue-text blue1">嗨，我是 Shan 👋</div>
                 <div class="blue-text blue2">我是熱愛打造有趣的動態效果與介面的前端工程師，</div>
-                <div class="blue-text blue3">使用Vue和GSAP創造出有靈魂的網頁</div>
+                <div class="blue-text blue3">使用Angular、Vue和GSAP創造出有靈魂的網頁</div>
                 <div class="blue-text blue4">我相信，好的網頁不只要有高效能，</div>
                 <div class="blue-text blue5">還要能展現精彩的動態效果與互動體驗。</div>
               </div>
@@ -62,7 +62,7 @@
                 <div class="black2-text black2-2">
                   我是熱愛打造有趣的動態效果與介面的前端工程師，
                 </div>
-                <div class="black2-text black2-3">使用Vue和GSAP創造出有靈魂的網頁</div>
+                <div class="black2-text black2-3">使用Angular、Vue和GSAP創造出有靈魂的網頁</div>
                 <div class="black2-text black2-4">我相信，好的網頁不只要有高效能，</div>
                 <div class="black2-text black2-5">還要能展現精彩的動態效果與互動體驗。</div>
               </div>
@@ -84,12 +84,15 @@
         <div class="en-title">PROJECT</div>
       </div>
       <div class="project-box">
-        <div class="item" v-for="(project, index) in projects" :key="index">
+        <a class="item" v-for="(project, index) in projects"
+        target="_blank"
+         :key="index"
+          :href="project.link || '#'">
           <div class="img-box">
             <img :src="project.imgSrc" :alt="project.name" />
           </div>
           <div class="name">{{ project.name }}</div>
-        </div>
+        </a>
       </div>
 
       <div class="more-box">
@@ -119,7 +122,7 @@ import FadeIn from '@/components/transition/FadeIn.vue'
 import '@/assets/scss/home/_home-view.scss'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
-import imgSky from '@/assets/img/home/bg_sky3.webp'
+
 
 gsap.registerPlugin(SplitText, ScrollTrigger)
 
@@ -136,21 +139,25 @@ const handleMouseMove = (e: MouseEvent) => {
 }
 
 const projects = ref([
-  {
-    name: '測試測試測試 1',
-    imgSrc: imgSky,
+{
+    name: '森景建設',
+    imgSrc: new URL('@/assets/img/project/official/sen.webp', import.meta.url).href,
+    link: 'https://www.senview.com.tw/',
   },
   {
-    name: '測試測試測試 2',
-    imgSrc: imgSky,
+    name: '橄欖樹廣告',
+    imgSrc: new URL('@/assets/img/project/official/olive_tree.webp', import.meta.url).href,
+    link: 'https://o-t.com.tw/',
   },
   {
-    name: '測試測試測試 3',
-    imgSrc: imgSky,
+    name: '元曜建設',
+    imgSrc: new URL('@/assets/img/project/official/yuanyao.webp', import.meta.url).href,
+    link:'https://www.yuan-yao.tw/'
   },
   {
-    name: '測試測試測試 4',
-    imgSrc: imgSky,
+    name: '山卓夫 代官山',
+    imgSrc: new URL('@/assets/img/project/onepage/dai.webp', import.meta.url).href,
+    link:'https://ws.srl.tw/cs/2025102109291930/'
   },
 ])
 
