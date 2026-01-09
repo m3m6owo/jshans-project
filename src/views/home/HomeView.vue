@@ -1,5 +1,4 @@
 <template>
-
   <div class="home-box main-box">
     <div class="card1" @mousemove="handleMouseMove">
       <!-- <div class="bg-box">
@@ -84,10 +83,13 @@
         <div class="en-title">PROJECT</div>
       </div>
       <div class="project-box">
-        <a class="item" v-for="(project, index) in projects"
-        target="_blank"
-         :key="index"
-          :href="project.link || '#'">
+        <a
+          class="item"
+          v-for="(project, index) in projects"
+          target="_blank"
+          :key="index"
+          :href="project.link || '#'"
+        >
           <div class="img-box">
             <img :src="project.imgSrc" :alt="project.name" />
           </div>
@@ -123,11 +125,9 @@ import '@/assets/scss/home/_home-view.scss'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
 
-
 gsap.registerPlugin(SplitText, ScrollTrigger)
 
-const window_width = window.innerWidth;
-
+const window_width = window.innerWidth
 
 const handleMouseMove = (e: MouseEvent) => {
   const card = e.currentTarget as HTMLElement
@@ -139,7 +139,7 @@ const handleMouseMove = (e: MouseEvent) => {
 }
 
 const projects = ref([
-{
+  {
     name: '森景建設',
     imgSrc: new URL('@/assets/img/project/official/sen.webp', import.meta.url).href,
     link: 'https://www.senview.com.tw/',
@@ -152,12 +152,12 @@ const projects = ref([
   {
     name: '元曜建設',
     imgSrc: new URL('@/assets/img/project/official/yuanyao.webp', import.meta.url).href,
-    link:'https://www.yuan-yao.tw/'
+    link: 'https://www.yuan-yao.tw/',
   },
   {
     name: '山卓夫 代官山',
     imgSrc: new URL('@/assets/img/project/onepage/dai.webp', import.meta.url).href,
-    link:'https://ws.srl.tw/cs/2025102109291930/'
+    link: 'https://ws.srl.tw/cs/2025102109291930/',
   },
 ])
 
@@ -172,72 +172,78 @@ const c1Ani = () => {
   const splitJshan = new SplitText(jshan, { type: 'chars' })
 
   if (window_width <= 1024) {
-    const tl = gsap.timeline({  })
-    tl
-    .to('.gradient-overlay,.gradient-bg', {
+    const tl = gsap.timeline({})
+    tl.to('.gradient-overlay,.gradient-bg', {
       duration: 0.7,
-      opacity:1
+      opacity: 1,
     })
-    .to('.gradient-overlay,.gradient-bg', {
-      clipPath: 'inset(0%)',
-      duration: 1,
-      ease: 'expo.in',
+      .to(
+        '.gradient-overlay,.gradient-bg',
+        {
+          clipPath: 'inset(0%)',
+          duration: 1,
+          ease: 'expo.in',
+        },
+        '<0.1',
+      )
 
-    },'<0.1')
-
-    .from(
-      splitHello.chars,
-      {
-        x: gsap.utils.wrap([-70, 70]),
-        filter: 'blur(5px)',
-        opacity: 0,
-        duration: 1,
-        ease: 'power1.Out',
-        stagger: { each: 0.05, from: 'center' },
-      },
-      '<0.75',
-    )
-    .to(
+      .from(
+        splitHello.chars,
+        {
+          x: gsap.utils.wrap([-70, 70]),
+          filter: 'blur(5px)',
+          opacity: 0,
+          duration: 1,
+          ease: 'power1.Out',
+          stagger: { each: 0.05, from: 'center' },
+        },
+        '<0.75',
+      )
+      .to(
         '.hello',
         {
-          scale: 1,   opacity:1,
+          scale: 1,
+          opacity: 1,
           duration: 1,
         },
         '<',
       )
-    .from(
-      splitJshan.chars,
-      {
-        x: gsap.utils.wrap([-70, 70]),
-        filter: 'blur(5px)',
-        opacity: 0,
-        duration: 1,
-        ease: 'power1.Out',
-        stagger: { each: 0.05, from: 'center' },
-      },
-      '<',
-
-    ).to(
+      .from(
+        splitJshan.chars,
+        {
+          x: gsap.utils.wrap([-70, 70]),
+          filter: 'blur(5px)',
+          opacity: 0,
+          duration: 1,
+          ease: 'power1.Out',
+          stagger: { each: 0.05, from: 'center' },
+        },
+        '<',
+      )
+      .to(
         '.jshan',
         {
           scale: 1,
-          duration: 1,   opacity:1,
+          duration: 1,
+          opacity: 1,
         },
         '<',
       )
   } else {
-    const tl = gsap.timeline({  })
-    tl
-    .to('.gradient-overlay,.gradient-bg', {
+    const tl = gsap.timeline({})
+    tl.to('.gradient-overlay,.gradient-bg', {
       duration: 0.7,
-      opacity:1
+      opacity: 1,
     })
-    .to('.gradient-overlay,.gradient-bg', {
-      clipPath: 'inset(0%)',
-      duration: 1,
-      ease: 'expo.in',
-
-    },'<')
+      .to(
+        '.gradient-overlay,.gradient-bg',
+        {
+          clipPath: 'inset(0%)',
+          duration: 1,
+          ease: 'expo.in',
+        },
+        '<',
+      )
       .to(
         splitHello.chars,
         {
@@ -247,14 +253,15 @@ const c1Ani = () => {
           stagger: 0.05,
           color: 'white',
           duration: 1,
-          opacity:1
+          opacity: 1,
         },
         '<0.75',
       )
       .to(
         '.hello',
         {
-          scale: 1,   opacity:1,
+          scale: 1,
+          opacity: 1,
           duration: 1,
         },
         '<',
@@ -265,9 +272,9 @@ const c1Ani = () => {
           x: '23vw',
           scale: 1,
           y: '7vw',
-          opacity:1,
+          opacity: 1,
           stagger: {
-            each: '0.05',
+            each: 0.05,
             from: 'end',
           },
           color: 'white',
@@ -279,7 +286,8 @@ const c1Ani = () => {
         '.jshan',
         {
           scale: 1,
-          duration: 1,   opacity:1,
+          duration: 1,
+          opacity: 1,
         },
         '<',
       )
@@ -314,7 +322,7 @@ const c2Ani = () => {
           linesClass: 'clip-text',
         }),
     )
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.card2',
         start: 'top top',
@@ -454,7 +462,7 @@ const c2TitleAni = () => {
       type: 'chars',
     })
 
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.card2',
         start: 'top center',
@@ -509,7 +517,7 @@ const c2TitleAni = () => {
       type: 'chars',
     })
 
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.card2',
         start: 'top center',
@@ -568,7 +576,7 @@ const c3Ani = () => {
       )
     })
 
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.card3',
         start: 'top center',
@@ -601,7 +609,7 @@ const c3Ani = () => {
       type: 'chars',
     })
 
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.card3',
         start: 'top center',
@@ -651,7 +659,7 @@ const c3Ani = () => {
 
 const c4Ani = () => {
   if (window_width <= 1024) {
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.card4',
         start: '-40% center',
@@ -669,7 +677,7 @@ const c4Ani = () => {
       },
     )
   } else {
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.card4',
         start: 'top center',
@@ -693,10 +701,10 @@ const c4Ani = () => {
 
 onMounted(() => {
   c1Ani()
-      c2TitleAni()
-      c2Ani()
-      c3Ani()
-      c4Ani()
+  c2TitleAni()
+  c2Ani()
+  c3Ani()
+  c4Ani()
 })
 </script>
 
