@@ -9,7 +9,7 @@ import legacy from '@vitejs/plugin-legacy'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/jshans-project/',
   build: {
     outDir: 'dist',
   },
@@ -21,12 +21,7 @@ export default defineConfig({
       targets: ['defaults', 'not IE 11'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
     }),
-    // preloadImg({
-    //   dir: 'src/assets/img/**/*.{jpg,png,svg,webp}',
-    //   attrs: {
-    //     rel: 'preload',
-    //   },
-    // }),
+
   ],
   server: {
     host: '0.0.0.0',
