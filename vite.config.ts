@@ -9,7 +9,7 @@ import legacy from '@vitejs/plugin-legacy'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/jshans-project/',
+  base: '/jshans-project',
   build: {
     outDir: 'dist',
   },
