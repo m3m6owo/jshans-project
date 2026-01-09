@@ -104,7 +104,7 @@
     </div>
 
     <div class="card4">
-      <div class="marquee-container">
+      <div class="marquee-container" @click="goContact">
         <div class="marquee top">
           <span v-for="n in 10" :key="n">GET IN TOUCH：）&nbsp;</span>
         </div>
@@ -118,14 +118,18 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import Menu from '@/components/menu/Menu.vue'
 import gsap from 'gsap'
-import FadeIn from '@/components/transition/FadeIn.vue'
 import '@/assets/scss/home/_home-view.scss'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
+import { useRouter } from 'vue-router'
 
 gsap.registerPlugin(SplitText, ScrollTrigger)
+
+const router = useRouter()
+const goContact = () => {
+  router.push('/contact')
+}
 
 const window_width = window.innerWidth
 
@@ -164,7 +168,7 @@ const projects = ref([
 const c1Ani = () => {
   const hello = document.querySelector('.hello')
   const jshan = document.querySelector('.jshan')
-  const isMobile = window.innerWidth <= 1024
+
   if (!hello || !jshan) return
 
   // 拆字

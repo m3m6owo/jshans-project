@@ -39,22 +39,4 @@ npm run lint
 ```
 
 <!--
-第一次部署 gh-pages 分支
-npm install --save-dev gh-pages
-在 package.json 增加 deploy 指令
-"scripts": {
-"build": "vite build",
-"deploy": "gh-pages -d dist"
-}
-確保 vite.config.ts 設定好 base：
-ts
-
-// vite.config.ts
-export default defineConfig({
-base: '/bear-m-board/'
-
-...
-})
-
-npm run build
 npm run deploy -->

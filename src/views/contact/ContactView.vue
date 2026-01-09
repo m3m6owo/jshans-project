@@ -40,7 +40,7 @@ const titleAni = () => {
   const splittitle = new SplitText(item, { type: 'chars' })
   const splittitle2 = new SplitText(item2, { type: 'chars' })
 
-  let tl = gsap.timeline({delay:0.2})
+  const tl = gsap.timeline({ delay: 0.2 })
 
   tl.from(splittitle.chars, {
     y: gsap.utils.wrap([50, 50]),
@@ -50,14 +50,18 @@ const titleAni = () => {
     ease: 'power3.out',
     stagger: { each: 0.08 },
   })
-  .from(splittitle2.chars, {
-    y: gsap.utils.wrap([50, 50]),
-    rotation: gsap.utils.wrap([-20, 10]),
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out',
-    stagger: { each: 0.08 },
-  },'<')
+    .from(
+      splittitle2.chars,
+      {
+        y: gsap.utils.wrap([50, 50]),
+        rotation: gsap.utils.wrap([-20, 10]),
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: { each: 0.08 },
+      },
+      '<',
+    )
     .from(
       '.greeting',
       {
@@ -79,7 +83,6 @@ const titleAni = () => {
       '<0.35',
     )
 
-
     .from(
       '.email',
       {
@@ -98,12 +101,9 @@ const titleAni = () => {
         filter: 'blur(6px)',
 
         duration: 1,
-
       },
       '<0.3',
     )
-
-
 }
 
 let clickHandler: (e: MouseEvent) => void // 外部宣告變數，保證作用域一致
@@ -147,5 +147,4 @@ onUnmounted(() => {
     window.removeEventListener('click', clickHandler)
   }
 })
-
 </script>
