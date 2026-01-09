@@ -37,11 +37,7 @@
           @mouseenter.native="!isMobile ? showImg(idx) : null"
         >
           <div class="links">
-            <router-link
-              v-for="link in item.list"
-              :key="link.id"
-              :to="{ name: link.link }"
-            >
+            <router-link v-for="link in item.list" :key="link.id" :to="{ name: link.link }">
               <div class="zh">{{ item.zhName }}</div>
             </router-link>
           </div>
@@ -203,7 +199,7 @@ const showImg = (idx: number) => {
       scale: 1,
       ease: 'myEase',
       overwrite: true,
-    }
+    },
   )
 }
 
@@ -224,7 +220,7 @@ const showClick = (val: boolean) => {
           duration: 1,
           ease: 'expo.inOut',
           opacity: 1,
-        }
+        },
       ).fromTo(
         '.left-img-box .img-box img:first-child',
         { clipPath: 'inset(100% 0% 0% 0%)', scale: 1.4 },
@@ -234,12 +230,8 @@ const showClick = (val: boolean) => {
           ease: 'myEase',
           scale: 1,
         },
-        '<0.2'
-      ).from('.menu-main .right-menu-box .link-box .item .links',{
-        y:70,
-        stagger:0.2,ease: 'myEase',
-        duration: 1,
-      },'<0.3')
+        '<0.2',
+      )
 
       imgRefs.value.forEach((el) => {
         gsap.set(el, { clipPath: 'inset(100% 0% 0% 0%)', zIndex: 0 })
@@ -252,17 +244,15 @@ const showClick = (val: boolean) => {
       showImg(0)
     })
     if (isMobile.value) {
-      const mobileTL  = gsap.timeline({})
+      const mobileTL = gsap.timeline({})
       mobileTL.fromTo(
         '.left-img-box .img-box:first-child',
-        { clipPath: 'inset(100% 0% 0% 0%)', },
+        { clipPath: 'inset(100% 0% 0% 0%)' },
         {
           clipPath: 'inset(0% 0% 0% 0%)',
           duration: 1,
           ease: 'myEase',
-
         },
-
       )
     }
   } else {
@@ -282,26 +272,25 @@ const showClick = (val: boolean) => {
     } else {
       const closeTl = gsap.timeline({})
       closeTl
-      .to('.menu-main .left-img-box .images .img-box', {
-        clipPath: 'inset(0% 0% 100% 0%)',
-        duration: 1,
-        ease: 'myEase',
-      })
-      .to(
-        menuRef.value,
-        {
+        .to('.menu-main .left-img-box .images .img-box', {
           clipPath: 'inset(0% 0% 100% 0%)',
-          duration: 0.8,
+          duration: 1,
           ease: 'myEase',
-          onComplete: () => {
-            is_Show.value = false
-            gsap.set(menuRef.value, { clipPath: 'inset(0% 100% 0% 0%)' })
+        })
+        .to(
+          menuRef.value,
+          {
+            clipPath: 'inset(0% 0% 100% 0%)',
+            duration: 0.8,
+            ease: 'myEase',
+            onComplete: () => {
+              is_Show.value = false
+              gsap.set(menuRef.value, { clipPath: 'inset(0% 100% 0% 0%)' })
+            },
           },
-        },
-        '<0.1'
-      )
+          '<0.1',
+        )
     }
-
   }
 }
 
@@ -312,9 +301,7 @@ onMounted(() => {
     })
   }
   nextTick(() => {
-    imgRefs.value.forEach((el) =>
-      gsap.set(el, { clipPath: 'inset(100% 0% 0% 0%)', zIndex: 0 })
-    )
+    imgRefs.value.forEach((el) => gsap.set(el, { clipPath: 'inset(100% 0% 0% 0%)', zIndex: 0 }))
     showImg(0)
     isMobile.value = 'ontouchstart' in window || navigator.maxTouchPoints > 0
   })
@@ -326,7 +313,7 @@ watch(
     if (is_Show.value) {
       showClick(false)
     }
-  }
+  },
 )
 </script>
 

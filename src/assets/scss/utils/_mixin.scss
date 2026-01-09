@@ -1,10 +1,8 @@
 @use '../utils/variables' as *;
 
-
 @mixin indexMore() {
-
-  font-size:  1.1vw;
-  font-family: "Cormorant Garamond";
+  font-size: 1.1vw;
+  font-family: 'Cormorant Garamond';
   font-weight: bold;
   letter-spacing: 0.1em;
   @media all and (max-width: 1024px) {
@@ -12,34 +10,36 @@
     letter-spacing: 0.3em;
   }
   @media all and (max-width: 500px) {
-    font-size:3.5vw;
+    font-size: 3.85vw;
+    letter-spacing: 0.15em;
   }
 }
-
 
 @mixin indexENtitle() {
   color: #dda868;
   font-size: $font-68;
-  font-family: "Cormorant Garamond";
+  font-family: 'Cormorant Garamond';
   @media all and (max-width: 1024px) {
-    font-size: $font-mobile-45;        font-size: 5.8vw;
+    font-size: $font-mobile-45;
+    font-size: 5.8vw;
   }
 }
 
 @mixin indexZHtitle() {
   color: #fff;
   font-size: $font-30;
-  font-family: "Noto Serif TC";
+  font-family: 'Noto Serif TC';
   letter-spacing: 0.3em;
   display: inline-block;
   position: relative;
   font-weight: 500;
   @media all and (max-width: 1024px) {
     writing-mode: initial;
-    font-size: $font-mobile-40;   font-size: 7vw;
+    font-size: $font-mobile-40;
+    font-size: 7vw;
   }
   &:after {
-    content: " ";
+    content: ' ';
     position: absolute;
     bottom: 3%;
     left: 0px;
@@ -57,7 +57,7 @@
 @mixin indexContent() {
   color: #fff;
   font-size: $font-18;
-  font-family: "Noto Serif TC";
+  font-family: 'Noto Serif TC';
   letter-spacing: 0.4em;
   line-height: 2vw;
   @media all and (max-width: 1024px) {
@@ -65,9 +65,6 @@
     line-height: 7vw;
   }
 }
-
-
-
 
 @mixin pageBigENTitle() {
   color: #fff;
@@ -86,7 +83,7 @@
   color: #232323;
   font-size: $font-34;
   font-weight: 600;
-  font-family: "Noto Serif TC";
+  font-family: 'Noto Serif TC';
   letter-spacing: 0.3em;
   @media all and (max-width: 1024px) {
     font-size: $font-mobile-40;
@@ -97,7 +94,7 @@
   color: #757575;
   font-size: $font-20;
   font-weight: bold;
-  font-family: "Cormorant Garamond";
+  font-family: 'Cormorant Garamond';
   letter-spacing: 0.15em;
   margin-top: 0.5vw;
 
@@ -111,7 +108,7 @@
 @mixin pageContent() {
   color: #232323;
   font-size: $font-18;
-  font-family: "微軟正黑體";
+  font-family: '微軟正黑體';
   letter-spacing: 0.2em;
   margin-top: 2vw;
   line-height: 2.1;
